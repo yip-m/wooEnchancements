@@ -1,153 +1,19 @@
-/*
- Theme Name: Kadence Child
- Theme URI: https://example.com
- Description: Motyw potomny dla Kadence
- Author: Twoje imię
- Template: kadence
- Version: 1.0
- Text Domain: kadence-child
+/*!
+Theme Name: Kadence
+Theme URI: https://www.kadencewp.com/kadence-theme/
+Author: Kadence WP
+Author URI: https://www.kadencewp.com/
+Description: Kadence Theme is a lightweight yet full featured WordPress theme for creating beautiful fast loading and accessible websites, easier than ever. It features an easy to use drag and drop header and footer builder to build any type of header in minutes. It features a full library of gorgeous starter templates that are easy to modify with our intelligent global font and color controls. With extensive integration with the most popular 3rd party plugins, you can quickly build impressive ecommerce websites, course websites, business websites, and more.
+Version: 1.4.2
+License: GNU General Public License v3.0 (or later)
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: kadence
+Requires at least: 6.3
+Tested up to: 6.8.3
+Tags: translation-ready, accessibility-ready, two-columns, right-sidebar, left-sidebar, footer-widgets, blog, custom-logo, custom-background, custom-menu, rtl-language-support, editor-style, threaded-comments, custom-colors, featured-images, wide-blocks, full-width-template, theme-options, e-commerce
+Requires PHP: 7.4
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share
+what you've learned with others.
 */
-
-/* --- STYLE OGÓLNE SKLEPU (Twoje oryginalne) --- */
-ul.wc-block-grid__products div.product-details.content-bg.entry-content-wrap {
-	background-color: #e47b02 !important;
-}
-
-div.wc-block-grid__product-onsale div.product-details.content-bg.entry-content-wrap {
-	background-color: #e47b02 !important;
-}
-
-ul.wc-block-grid__products li.wc-block-grid__product.entry.loop-entry.content-bg.woo-archive-action-on-hover.woo-archive-btn-text.product-loop-boxed.woo-archive-image-hover-none {
-	background-color: #e47b02 !important;
-}
-
-li.entry.content-bg.loop-entry.product.type-product.status-publish {
-	background: #e47b02 !important;
-}
-
-li div.product-details.content-bg.entry-content-wrap {
-	background: #e47b02 !important;
-}
-
-li div.product-details.content-bg.entry-content-wrap div.star-rating span {
-	color: #f5a524 !important;
-}
-
-li.entry.content-bg.loop-entry.product div.product-details.content-bg {
-    padding-left: 12px !important;
-	padding-bottom: 10px !important;
-	padding-right: 10px !important;
-	padding-top: 10px !important;
-}
-
-/* Kolory przycisków */
-.wc-block-components-product-button span[data-wp-text] {
-    color: #1f2933 !important;
-}
-
-.wc-block-components-product-button .added_to_cart {
-    color: #1f2933 !important;
-    text-decoration: none;
-}
-
-.wc-block-components-product-button .added_to_cart:hover,
-.wc-block-components-product-button span[data-wp-text]:hover {
-    color: #1f2933 !important;
-}
-
-.wc-block-components-product-button__button span[data-wp-text] {
-    color: #1f2933 !important;
-}
-
-.wc-block-components-product-button {
-    padding-bottom: 10px;
-}
-
-/* --- STYLE WARIANTÓW (Naprawione) --- */
-
-/* Kontener */
-.custom-variant-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-/* Kafelki */
-.variant-selectors {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.variant-option {
-    flex: 1;
-    text-align: center;
-    padding: 8px 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #fff;
-    color: #333;
-    font-size: 14px;
-    transition: all 0.2s ease;
-    user-select: none;
-}
-
-.variant-option:hover {
-    border-color: #f5a524;
-}
-
-.variant-option.active {
-    background-color: #f5a524 !important;
-    color: #1f2933 !important;
-    border-color: #e47b02 !important;
-    font-weight: bold;
-}
-
-/* Przycisk dodawania */
-.main-variant-add-btn {
-    width: 100%;
-    justify-content: center;
-    transition: opacity 0.3s ease;
-    position: relative;
-    min-height: 40px; /* Aby loader się mieścił */
-}
-
-/* Stan NIEAKTYWNY (nic nie wybrano) */
-.main-variant-add-btn[data-variation_id=""] {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-/* Stan AKTYWNY (wybrano) */
-.main-variant-add-btn:not([data-variation_id=""]) {
-    opacity: 1;
-    cursor: pointer;
-}
-
-/* Stan LOADING (nasz własny spinner zamiast maski Woo) */
-.main-variant-add-btn.loading {
-    color: transparent !important; /* Ukryj tekst */
-    pointer-events: none; /* Zablokuj klikanie */
-}
-
-.main-variant-add-btn.loading::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    left: 50%;
-    margin-top: -10px;
-    margin-left: -10px;
-    border: 2px solid #1f2933;
-    border-top-color: transparent;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
